@@ -23,5 +23,8 @@ module.exports = {
     //permite usar o js como extensao
     'react/jsx-filename-extension': ['warn', { extensions: ['.jsx', '.js'] }],
     'import/prefer-default-export': 'off',
+    'no-console': ['error', { allow: ['tron'] }],
+    // para o erro de alterar uma variavel recebida em funcao
+    'no-param-reassign': 'off',
   },
 };
