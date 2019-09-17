@@ -36,14 +36,14 @@ class Home extends Component {
    * automaticamente recebe uma propriedade chamada dispatch
    * que dispara uma action ao redux
    */
-  handleAddProduct = product => {
-    const { addToCart } = this.props;
+  handleAddProduct = id => {
+    const { addToCartRequest } = this.props;
 
     /**
      * Funcao utilizada para disparar uma action ao redux
      * toda action tem um type unico
      */
-    addToCart(product);
+    addToCartRequest(id);
   };
 
   render() {
@@ -61,7 +61,7 @@ class Home extends Component {
 
             <button
               type="button"
-              onClick={() => this.handleAddProduct(product)}
+              onClick={() => this.handleAddProduct(product.id)}
             >
               <div>
                 <MdShoppingCart size={16} color="#FFF" />
