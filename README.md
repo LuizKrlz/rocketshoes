@@ -11,7 +11,7 @@
 It is a project created on study ReactJs + Redux and Redux Saga.
 The idea is building a interface similar an cart of ecommerce.
 
-In this project i was used:
+In this project i used:
 
 - Axios
 - React
