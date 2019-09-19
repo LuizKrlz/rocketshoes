@@ -27,9 +27,9 @@ In this project i used:
 - Prettier
 - EditorConfig
 
-## Next Steps
+### Next Steps
 
-[ ] Create a mobile version
-[ ] Create api with nodejs
-[ ] Refactoring web to use react hooks
-[ ] Tests on mobile and web
+- [ ] Create a mobile version
+- [ ] Create api with nodejs
+- [ ] Refactoring web to use react hooks
+- [ ] Tests on mobile and web
