@@ -13,6 +13,7 @@ The idea is building a interface similar an cart of ecommerce.
 
 In this project i was used:
 
+- Axios
 - React
 - React Router Dom
 - Reactotron
@@ -20,9 +21,15 @@ In this project i was used:
 - React Redux
 - Redux Saga
 - Immer
-- Axios
 - Polished
 - Styled Components
 - Eslint
 - Prettier
 - EditorConfig
+
+## Next Steps
+
+[ ] Create a mobile version
+[ ] Create api with nodejs
+[ ] Refactoring web to use react hooks
+[ ] Tests on mobile and web
