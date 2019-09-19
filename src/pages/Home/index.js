@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { MdShoppingCart } from 'react-icons/md';
 import Loading from 'react-loading';
+import PropTypes from 'prop-types';
 
 import { formatPrice } from '../../util/format';
 import api from '../../services/api';
@@ -85,6 +86,12 @@ class Home extends Component {
     );
   }
 }
+
+Home.propTypes = {
+  amount: PropTypes.number.isRequired,
+  loading: PropTypes.bool.isRequired,
+  addToCartRequest: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = state => ({
   amount: state.cart.reduce((amount, product) => {
