@@ -94,3 +94,10 @@ export const Total = styled.div`
     margin-left: 5px;
   }
 `;
+
+export const NoItens = styled.tr`
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  background: #f5f5f5;
+`;

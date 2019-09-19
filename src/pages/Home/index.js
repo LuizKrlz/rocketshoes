@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { MdShoppingCart } from 'react-icons/md';
+import Loading from 'react-loading';
 
 import { formatPrice } from '../../util/format';
 import api from '../../services/api';
 
 import * as CartActions from '../../store/modules/cart/actions';
 
-import { ProductList } from './styles';
+import { ProductList, ContainerLoading } from './styles';
 
 class Home extends Component {
   state = {
@@ -48,30 +49,39 @@ class Home extends Component {
 
   render() {
     const { products } = this.state;
-    const { amount } = this.props;
+    const { amount, loading } = this.props;
+
+    console.tron.log(loading);
 
     return (
-      <ProductList>
-        {products.map(product => (
-          <li key={product.id}>
-            <img src={product.image} alt={product.title} />
+      <div style={{ position: 'relative' }}>
+        {loading && (
+          <ContainerLoading>
+            <Loading type="spin" color="#7159c1" size={90} />
+          </ContainerLoading>
+        )}
+        <ProductList>
+          {products.map(product => (
+            <li key={product.id}>
+              <img src={product.image} alt={product.title} />
 
-            <strong>{product.title}</strong>
-            <span>{product.priceFormatted}</span>
+              <strong>{product.title}</strong>
+              <span>{product.priceFormatted}</span>
 
-            <button
-              type="button"
-              onClick={() => this.handleAddProduct(product.id)}
-            >
-              <div>
-                <MdShoppingCart size={16} color="#FFF" />
-                {amount[product.id] || 0}
-              </div>
-              <span>ADICIONAR AO CARRINHO</span>
-            </button>
-          </li>
-        ))}
-      </ProductList>
+              <button
+                type="button"
+                onClick={() => this.handleAddProduct(product.id)}
+              >
+                <div>
+                  <MdShoppingCart size={16} color="#FFF" />
+                  {amount[product.id] || 0}
+                </div>
+                <span>ADICIONAR AO CARRINHO</span>
+              </button>
+            </li>
+          ))}
+        </ProductList>
+      </div>
     );
   }
 }
@@ -82,6 +92,7 @@ const mapStateToProps = state => ({
 
     return amount;
   }, {}),
+  loading: state.loading.show,
 });
 
 // transforma actions em propriedades do componente
