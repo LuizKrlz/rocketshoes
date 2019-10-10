@@ -27,4 +27,11 @@ module.exports = {
     // para o erro de alterar uma variavel recebida em funcao
     'no-param-reassign': 'off',
   },
+  settings: {
+    'import/resolver': {
+      'babel-plugin-root-import': {
+        rootPathSuffix: 'src',
+      },
+    },
+  },
 };
